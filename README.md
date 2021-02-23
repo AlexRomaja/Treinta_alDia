@@ -7,4 +7,4 @@ La app integra imagenes personalisadas y descargadas de internet. Las que fueron
 
 //Motivo de la app Se dicidió que la app fuera de ejercicio por que es un tema donde tengo experiencia, si bien no una al nivel de un entrenador, almenos la de años entrenando. Mí entrenamiento a sido desde funcional, artes marciales, isometrico y clásico con pesas y corriendo. A si que pondre en esta app algunos de los ejercicios que usado en mi vida y que por experiencia se que funcionan.
 
-Esta app le dare el mayor seguimiento que pueda, ya que esta app no es más que para empezar un portafolio de apps. Si tiene pegue o no es irrelevante, aun que sería bueno pero la meta actual es desarrollar una variedad grande apps para ampliar mis conocimientos.
+Esta app le dare el mayor seguimiento que pueda, ya que esta app no es más que para empezar un portafolio de apps. Si tiene popularidad o no es irrelevante, aunque sería bueno pero la meta actual es desarrollar una variedad grande de apps para ampliar mis conocimientos.
