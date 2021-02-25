@@ -1,15 +1,21 @@
 package com.example.treintaalda.Activities;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.treintaalda.Adapter.sinAparatoAdapter;
 import com.example.treintaalda.Datos.TipoEjerDat;
 import com.example.treintaalda.Fragments.FragMedia;
 import com.example.treintaalda.R;
+import com.google.android.material.appbar.MaterialToolbar;
 
 import java.util.ArrayList;
 
@@ -17,15 +23,22 @@ public class Secon_sinAparato extends AppCompatActivity {
 
     RecyclerView secondRec;
 
-    int[] imagenes = {R.drawable.brazo_100x100, R.drawable.abdomen_100x100,
-            R.drawable.espalda_100x100, R.drawable.pecho_100x100, R.drawable.pierna_100x100};
-
+    int[] imagenes = {R.drawable.vector_brazo, R.drawable.vector_abdomen,R.drawable.vector_espalda,
+            R.drawable.vector_pecho,R.drawable.vector_pierna};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second_consinaparato);
         secondRec = findViewById(R.id.secondRecycler);
+
+        MaterialToolbar toolbar = findViewById(R.id.toolBarSecond);
+        setSupportActionBar(toolbar);
+
+        ActionBar secondActionBar = getSupportActionBar();
+        if(secondActionBar != null){
+            secondActionBar.setDisplayHomeAsUpEnabled(true);
+        }
 
         TablaDatos();
     }
@@ -44,5 +57,22 @@ public class Secon_sinAparato extends AppCompatActivity {
 
         secondRec.setAdapter(adapter);
         secondRec.setLayoutManager(new GridLayoutManager(this, 2));
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.top_bar_general, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.icon_Ayuda:
+                Toast.makeText(this, "Clicked ayuda", Toast.LENGTH_SHORT).show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#0093c4</color>
     <color name="colorAccent">#8bf6ff</color>
     <color name="colorInfoButton">#ffd600</color>
+    <color name="colorMenu">#212121</color>
 
     <color name="colorBlanco">#ffff</color>
     <color name="colorNegro">#000000</color>

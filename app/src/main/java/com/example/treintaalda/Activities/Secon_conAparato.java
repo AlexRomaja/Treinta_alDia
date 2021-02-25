@@ -1,14 +1,20 @@
 package com.example.treintaalda.Activities;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.treintaalda.Adapter.conAparatoAdapter;
 import com.example.treintaalda.Datos.TipoEjerDat;
 import com.example.treintaalda.R;
+import com.google.android.material.appbar.MaterialToolbar;
 
 import java.util.ArrayList;
 
@@ -25,6 +31,14 @@ public class Secon_conAparato extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second_consinaparato);
         secondRec = findViewById(R.id.secondRecycler);
+
+        MaterialToolbar toolbar = findViewById(R.id.toolBarSecond);
+        setSupportActionBar(toolbar);
+
+        ActionBar secondActionBar = getSupportActionBar();
+        if(secondActionBar != null){
+            secondActionBar.setDisplayHomeAsUpEnabled(true);
+        }
 
         TablaDatos();
 
@@ -44,5 +58,22 @@ public class Secon_conAparato extends AppCompatActivity {
 
         secondRec.setAdapter(adapter);
         secondRec.setLayoutManager(new GridLayoutManager(this, 2));
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.top_bar_general, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.icon_Ayuda:
+                Toast.makeText(this, "Clicked ayuda", Toast.LENGTH_SHORT).show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

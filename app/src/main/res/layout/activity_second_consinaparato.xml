@@ -6,9 +6,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.Secon_sinAparato"
-    android:padding="10dp"
     >
 
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolBarSecond"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorMenu"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ToolbarArrow"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/elijeEjercicio"
+        app:titleTextColor="@color/colorBlanco"
+        />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/secondConstrainLay"
