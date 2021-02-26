@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.treintaalda.Activities.Secon_conAparato;
 import com.example.treintaalda.Activities.Secon_sinAparato;
 import com.example.treintaalda.Activities.Third_ejerNivel;
+import com.example.treintaalda.Activities.Third_nivelSin;
 import com.example.treintaalda.Datos.TipoEjerDat;
 import com.example.treintaalda.Fragments.FragBaja;
 import com.example.treintaalda.Fragments.FragMedia;
@@ -45,16 +46,15 @@ public class sinAparatoAdapter extends RecyclerView.Adapter<sinAparatoAdapter.Vi
         //setImagenes
         holder.image.setImageResource(tipoEjercicios.get(position).getImgURL());
         final int pos = position;
-        final int sinAparato = 0;
 
         //Clicker
         holder.cardParent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, Third_ejerNivel.class);
+                Intent intent = new Intent(context, Third_nivelSin.class);
                 intent.putExtra("pos", pos);
-                intent.putExtra("aparato", sinAparato);
-                context.startActivity(intent); }
+                context.startActivity(intent);
+            }
         });
 
     }

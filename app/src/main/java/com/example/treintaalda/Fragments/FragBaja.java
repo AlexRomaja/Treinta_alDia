@@ -87,8 +87,8 @@ public class FragBaja extends Fragment {
         View view = inflater.inflate(R.layout.fragment_frag_baja, container, false);
         listView = view.findViewById(R.id.listBaja);
         Third_ejerNivel activity = (Third_ejerNivel) getActivity();
-        position = activity.getPosition();
-        aparato = activity.getAparato();
+//        position = activity.getPosition();
+//        aparato = activity.getAparato();
 
         consultaDatos();
 

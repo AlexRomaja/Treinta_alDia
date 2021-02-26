@@ -6,7 +6,7 @@
     <string name="tabMedia">Media</string>
     <string name="tabAlta">Alta</string>
     <string name="Titulo">Treinta al Día</string>
-    <string name="elijeEjercicio">Escoje tipo de ejercicio</string>
-    <string name="elijeDificultad">Elige una intensidad</string>
+    <string name="eligeEjercicio">Escoge tipo de ejercicio</string>
+    <string name="eligeDificultad">Elige una intensidad</string>
     <string name="ic_ayuda">Ayuda</string>
 </resources>

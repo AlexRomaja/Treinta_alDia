@@ -2,10 +2,12 @@ package com.example.treintaalda.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -70,7 +72,18 @@ public class Secon_conAparato extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.icon_Ayuda:
-                Toast.makeText(this, "Clicked ayuda", Toast.LENGTH_SHORT).show();
+                AlertDialog.Builder builder = new AlertDialog.Builder(Secon_conAparato.this);
+                builder.setTitle("Eligiendo ejercicio");
+                builder.setMessage(
+                        "En esta pantalla cada estilo de ejercicio esta representado con una imagen." +
+                                "\nAprieta en la imagen del aparato o herramienta que más te interesa para continuar."
+                );
+                builder.setNegativeButton("Cerrar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                });
+                builder.create().show();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

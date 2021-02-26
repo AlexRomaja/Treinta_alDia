@@ -39,12 +39,12 @@ public class Third_ejerNivel extends AppCompatActivity {
         initComponents();
 
         //*******************************Get intent
-        Intent intent = getIntent();
-        int position = intent.getIntExtra("pos", 0);
-        setPosition(position);
+//        Intent intent = getIntent();
+//        int position = intent.getIntExtra("pos", 0);
+//        setPosition(position);
         //*******************************Get aparato
-        int apar = intent.getIntExtra("aparato", 0);
-        setAparato(apar);
+//        int apar = intent.getIntExtra("aparato", 0);
+//        setAparato(apar);
         //*******************************ToolBar
         MaterialToolbar toolbar = findViewById(R.id.toolBarThird);
         setSupportActionBar(toolbar);
@@ -78,20 +78,20 @@ public class Third_ejerNivel extends AppCompatActivity {
     }
 
     //*********sin/con Aparato
-    public void setAparato(int aparato){
-        this.aparato = aparato;
-    }
-    public int getAparato(){
-        return aparato;
-    }
+//    public void setAparato(int aparato){
+//        this.aparato = aparato;
+//    }
+//    public int getAparato(){
+//        return aparato;
+//    }
 
     //*********Position
-    public void setPosition(int pos){
-        this.pos = pos;
-    }
-    public int getPosition(){
-        return pos;
-    }
+//    public void setPosition(int pos){
+//        this.pos = pos;
+//    }
+//    public int getPosition(){
+//        return pos;
+//    }
 
     public void initComponents() {
         tabLayout = findViewById(R.id.TabLayout);

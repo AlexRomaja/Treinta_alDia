@@ -72,8 +72,8 @@ public class FragMedia extends Fragment {
         textView = view.findViewById(R.id.fragMediaTXT);
 
         Third_ejerNivel activity = (Third_ejerNivel) getActivity();
-        int position = activity.getPosition();
-        textView.setText(String.valueOf(position));
+//        int position = activity.getPosition();
+//        textView.setText(String.valueOf(position));
 
         return view;
     }

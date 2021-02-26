@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.treintaalda.Activities.Secon_conAparato;
 import com.example.treintaalda.Activities.Third_ejerNivel;
+import com.example.treintaalda.Activities.Third_nivelCon;
 import com.example.treintaalda.Datos.TipoEjerDat;
 import com.example.treintaalda.Fragments.FragMedia;
 import com.example.treintaalda.R;
@@ -41,14 +42,12 @@ public class conAparatoAdapter extends RecyclerView.Adapter<conAparatoAdapter.Vi
         //setImagenes
         holder.image.setImageResource(tipoEjercicios.get(position).getImgURL());
         final int pos = position;
-        final int conAparato = 1;
         //Clicker
         holder.cardParent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, Third_ejerNivel.class);
+                Intent intent = new Intent(context, Third_nivelCon.class);
                 intent.putExtra("pos", pos);
-                intent.putExtra("aparato", conAparato);
                 context.startActivity(intent);
             }
         });
