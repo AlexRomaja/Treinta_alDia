@@ -2,22 +2,17 @@ package com.example.treintaalda.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.treintaalda.Activities.Secon_conAparato;
-import com.example.treintaalda.Activities.Third_ejerNivel;
 import com.example.treintaalda.Activities.Third_nivelCon;
 import com.example.treintaalda.Datos.TipoEjerDat;
-import com.example.treintaalda.Fragments.FragMedia;
 import com.example.treintaalda.R;
 
 import java.util.ArrayList;

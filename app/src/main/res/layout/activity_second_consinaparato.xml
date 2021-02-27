@@ -15,12 +15,12 @@
         android:background="@color/colorMenu"
         android:minHeight="?attr/actionBarSize"
         android:theme="@style/ToolbarArrow"
+        app:title="@string/eligeEjercicio"
+        app:titleTextColor="@color/colorBlanco"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:title="@string/eligeEjercicio"
-        app:titleTextColor="@color/colorBlanco"
         />
 
     <androidx.constraintlayout.widget.ConstraintLayout

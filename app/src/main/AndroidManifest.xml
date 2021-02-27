@@ -17,7 +17,6 @@
             android:name=".Activities.Third_nivelSin"
             android:label="nivel Sin Aparato"
             android:parentActivityName=".Activities.Secon_sinAparato"/>
-        <activity android:name=".Activities.Third_ejerNivel" />
         <activity
             android:name=".Activities.Secon_sinAparato"
             android:label="Sin Aparato"

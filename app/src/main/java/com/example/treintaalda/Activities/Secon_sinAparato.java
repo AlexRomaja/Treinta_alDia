@@ -11,12 +11,9 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.example.treintaalda.Adapter.sinAparatoAdapter;
 import com.example.treintaalda.Datos.TipoEjerDat;
-import com.example.treintaalda.Fragments.FragMedia;
-import com.example.treintaalda.MainActivity;
 import com.example.treintaalda.R;
 import com.google.android.material.appbar.MaterialToolbar;
 

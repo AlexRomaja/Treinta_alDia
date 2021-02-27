@@ -12,9 +12,9 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import com.example.treintaalda.Activities.Third_ejerNivel;
+import com.example.treintaalda.Activities.Third_nivelCon;
+import com.example.treintaalda.Activities.Third_nivelSin;
 import com.example.treintaalda.Datos.MockDat;
 import com.example.treintaalda.R;
 import com.example.treintaalda.sqlDB.DatabaseHelper;
@@ -23,10 +23,10 @@ import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link FragBaja#newInstance} factory method to
+ * Use the {@link FragBajaSin#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FragBaja extends Fragment {
+public class FragBajaSin extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -37,7 +37,7 @@ public class FragBaja extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public FragBaja() {
+    public FragBajaSin() {
         // Required empty public constructor
     }
 
@@ -50,8 +50,8 @@ public class FragBaja extends Fragment {
      * @return A new instance of fragment FragBaja.
      */
     // TODO: Rename and change types and number of parameters
-    public static FragBaja newInstance(String param1, String param2) {
-        FragBaja fragment = new FragBaja();
+    public static FragBajaSin newInstance(String param1, String param2) {
+        FragBajaSin fragment = new FragBajaSin();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -86,10 +86,8 @@ public class FragBaja extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_frag_baja, container, false);
         listView = view.findViewById(R.id.listBaja);
-        Third_ejerNivel activity = (Third_ejerNivel) getActivity();
-//        position = activity.getPosition();
-//        aparato = activity.getAparato();
-
+        Third_nivelSin act_sinAparto = (Third_nivelSin) getActivity();
+        position = act_sinAparto.getPosition();
         consultaDatos();
 
 
@@ -115,7 +113,7 @@ public class FragBaja extends Fragment {
         listMock = new ArrayList<MockDat>();
 
         //TODO: Choose BD
-        if (aparato == 0) {
+//        if (aparato == 0) {
             if (position == 0) {
                 Cursor cursor = db.query("brazo", null, null, null,
                         null, null, null);
@@ -137,17 +135,17 @@ public class FragBaja extends Fragment {
                     listMock.add(mockDat);
                 }
             }
-        }else if (aparato == 1) {
-            Cursor cursor = db.query("abdomen", null, null, null,
-                    null, null, null);
-            while (cursor.moveToNext()) {
-                mockDat = new MockDat();
-                mockDat.setId(cursor.getInt(0));
-                mockDat.setName(cursor.getString(1));
-
-                listMock.add(mockDat);
-            }
-        }
+//        }else if (aparato == 1) {
+//            Cursor cursor = db.query("abdomen", null, null, null,
+//                    null, null, null);
+//            while (cursor.moveToNext()) {
+//                mockDat = new MockDat();
+//                mockDat.setId(cursor.getInt(0));
+//                mockDat.setName(cursor.getString(1));
+//
+//                listMock.add(mockDat);
+//            }
+//        }
         obtenerLista();
     }
 

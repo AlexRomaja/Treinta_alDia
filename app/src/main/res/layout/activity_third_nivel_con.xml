@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,20 +7,35 @@
     android:layout_height="match_parent"
     tools:context=".Activities.Third_nivelCon"
     >
-
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/toolBarThirdCon"
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorMenu"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="@style/ToolbarArrow"
+        android:layout_height="wrap_content">
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:title="@string/eligeDificultad"
-        app:titleTextColor="@color/colorBlanco"
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolBarThirdCon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorMenu"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/ToolbarArrow"
+            app:title="@string/eligeDificultad"
+            app:titleTextColor="@color/colorBlanco"
+            />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayoutCon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBaja"
+            app:tabSelectedTextColor="@color/colorBlanco"
+            />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPagerCon"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
         />
 
-</LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
