@@ -1,5 +1,6 @@
 package com.example.treintaalda.Fragments;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -12,12 +13,13 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
-import com.example.treintaalda.Activities.Third_nivelCon;
+import com.example.treintaalda.Activities.Fourth_Ejercicio;
 import com.example.treintaalda.Activities.Third_nivelSin;
-import com.example.treintaalda.Datos.MockDat;
+import com.example.treintaalda.Datos.EjercicioDat;
 import com.example.treintaalda.R;
-import com.example.treintaalda.sqlDB.DatabaseHelper;
+import com.example.treintaalda.sqlDB.DBHelper;
 
 import java.util.ArrayList;
 
@@ -68,24 +70,23 @@ public class FragBajaSin extends Fragment {
         }
     }
 
-    //**************************************************////TODO:Tab_Baja
+    //**************************************************////TODO:Tab_sinBaja
     //**************************************************
     //**************************************************
     //**************************************************
 
     ListView listView;
     ArrayList<String> listDat;
-    ArrayList<MockDat> listMock;
+    ArrayList<EjercicioDat> listEjer;
 
     int position;
-    int aparato;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_frag_baja, container, false);
-        listView = view.findViewById(R.id.listBaja);
+        listView = view.findViewById(R.id.listBajasin);
         Third_nivelSin act_sinAparto = (Third_nivelSin) getActivity();
         position = act_sinAparto.getPosition();
         consultaDatos();
@@ -97,62 +98,106 @@ public class FragBajaSin extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int pos, long id) {
-                int aux = listMock.get(pos).getId();
+                int img = listEjer.get(pos).getImagURL();
+                String titulo = listEjer.get(pos).getName();
+                int series = listEjer.get(pos).getSeries();
+                int rept = listEjer.get(pos).getRepeticiones();
+                String desc = listEjer.get(pos).getDescripcion();
+                Intent intent = new Intent(getActivity(), Fourth_Ejercicio.class);
+                intent.putExtra("img", img);
+                intent.putExtra("titulo", titulo);
+                intent.putExtra("series", series);
+                intent.putExtra("rept", rept);
+                intent.putExtra("desc", desc);
+                startActivity(intent);
             }
         });
-
 
         return view;
     }
 
     private void consultaDatos(){
-        DatabaseHelper databaseHelper = new DatabaseHelper(getActivity());
-        SQLiteDatabase db = databaseHelper.getReadableDatabase();
+        DBHelper dbHelper = new DBHelper(getActivity());
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
 
-        MockDat mockDat = null;
-        listMock = new ArrayList<MockDat>();
+        EjercicioDat ejerDat = null;
+        listEjer = new ArrayList<EjercicioDat>();
 
         //TODO: Choose BD
-//        if (aparato == 0) {
-            if (position == 0) {
-                Cursor cursor = db.query("brazo", null, null, null,
-                        null, null, null);
-                while (cursor.moveToNext()) {
-                    mockDat = new MockDat();
-                    mockDat.setId(cursor.getInt(0));
-                    mockDat.setName(cursor.getString(1));
 
-                    listMock.add(mockDat);
-                }
-            } else if (position == 1){
-                Cursor cursor = db.query("abdomen", null, null, null,
-                        null, null, null);
-                while (cursor.moveToNext()) {
-                    mockDat = new MockDat();
-                    mockDat.setId(cursor.getInt(0));
-                    mockDat.setName(cursor.getString(1));
-
-                    listMock.add(mockDat);
-                }
+        if (position == 0) {
+            Cursor cursor = db.query("baja_brazo", null, null, null,
+                    null, null, null);
+            while (cursor.moveToNext()) {
+                ejerDat = new EjercicioDat();
+                ejerDat.setId(cursor.getInt(0));
+                ejerDat.setName(cursor.getString(1));
+                ejerDat.setSeries(cursor.getInt(2));
+                ejerDat.setRepeticiones(cursor.getInt(3));
+                ejerDat.setDescripcion(cursor.getString(4));
+                ejerDat.setImagURL(cursor.getInt(5));
+                listEjer.add(ejerDat);
             }
-//        }else if (aparato == 1) {
-//            Cursor cursor = db.query("abdomen", null, null, null,
-//                    null, null, null);
-//            while (cursor.moveToNext()) {
-//                mockDat = new MockDat();
-//                mockDat.setId(cursor.getInt(0));
-//                mockDat.setName(cursor.getString(1));
-//
-//                listMock.add(mockDat);
-//            }
-//        }
+        }else if (position == 1){
+            Cursor cursor = db.query("baja_abdomen", null, null, null,
+                    null, null, null);
+            while (cursor.moveToNext()) {
+                ejerDat = new EjercicioDat();
+                ejerDat.setId(cursor.getInt(0));
+                ejerDat.setName(cursor.getString(1));
+                ejerDat.setSeries(cursor.getInt(2));
+                ejerDat.setRepeticiones(cursor.getInt(3));
+                ejerDat.setDescripcion(cursor.getString(4));
+                ejerDat.setImagURL(cursor.getInt(5));
+                listEjer.add(ejerDat);
+            }
+        }else if (position == 2){
+            Cursor cursor = db.query("baja_espalda", null, null, null,
+                    null, null, null);
+            while (cursor.moveToNext()) {
+                ejerDat = new EjercicioDat();
+                ejerDat.setId(cursor.getInt(0));
+                ejerDat.setName(cursor.getString(1));
+                ejerDat.setSeries(cursor.getInt(2));
+                ejerDat.setRepeticiones(cursor.getInt(3));
+                ejerDat.setDescripcion(cursor.getString(4));
+                ejerDat.setImagURL(cursor.getInt(5));
+                listEjer.add(ejerDat);
+            }
+        }else if (position == 3){
+            Cursor cursor = db.query("baja_pecho", null, null, null,
+                    null, null, null);
+            while (cursor.moveToNext()) {
+                ejerDat = new EjercicioDat();
+                ejerDat.setId(cursor.getInt(0));
+                ejerDat.setName(cursor.getString(1));
+                ejerDat.setSeries(cursor.getInt(2));
+                ejerDat.setRepeticiones(cursor.getInt(3));
+                ejerDat.setDescripcion(cursor.getString(4));
+                ejerDat.setImagURL(cursor.getInt(5));
+                listEjer.add(ejerDat);
+            }
+        }else if (position == 4){
+            Cursor cursor = db.query("baja_pierna", null, null, null,
+                    null, null, null);
+            while (cursor.moveToNext()) {
+                ejerDat = new EjercicioDat();
+                ejerDat.setId(cursor.getInt(0));
+                ejerDat.setName(cursor.getString(1));
+                ejerDat.setSeries(cursor.getInt(2));
+                ejerDat.setRepeticiones(cursor.getInt(3));
+                ejerDat.setDescripcion(cursor.getString(4));
+                ejerDat.setImagURL(cursor.getInt(5));
+                listEjer.add(ejerDat);
+            }
+        }
         obtenerLista();
     }
 
     private void obtenerLista() {
         listDat = new ArrayList<>();
-        for (int i=0; i < listMock.size(); i++){
-            listDat.add(""+listMock.get(i).getName());
+        for (int i=0; i < listEjer.size(); i++){
+            listDat.add(""+listEjer.get(i).getName());
         }
     }
 

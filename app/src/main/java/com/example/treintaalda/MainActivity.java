@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     RecyclerView ejermainRec;
 
-    int[] imagenes = {R.drawable.sinaparato, R.drawable.conaparato};
+    int[] imagenes = {R.drawable.vector_brazo, R.drawable.conaparato};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

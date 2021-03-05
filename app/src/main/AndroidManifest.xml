@@ -9,14 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".Activities.Fourth_Ejercicio"></activity>
         <activity
             android:name=".Activities.Third_nivelCon"
             android:label="nivel Sin Aparato"
-            android:parentActivityName=".Activities.Secon_conAparato"/>
+            android:parentActivityName=".Activities.Secon_conAparato" />
         <activity
             android:name=".Activities.Third_nivelSin"
             android:label="nivel Sin Aparato"
-            android:parentActivityName=".Activities.Secon_sinAparato"/>
+            android:parentActivityName=".Activities.Secon_sinAparato" />
         <activity
             android:name=".Activities.Secon_sinAparato"
             android:label="Sin Aparato"

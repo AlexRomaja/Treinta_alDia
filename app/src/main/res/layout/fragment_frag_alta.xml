@@ -6,9 +6,12 @@
     tools:context=".Fragments.FragAltaSin">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ListView
+        android:id="@+id/listAltasin"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Alta_Intesidad" />
+        android:background="@color/colorBlanco"
+
+        />
 
 </FrameLayout>
