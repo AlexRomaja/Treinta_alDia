@@ -102,6 +102,6 @@
         app:layout_constraintTop_toBottomOf="@id/seriesTXT"
         android:textStyle="bold"
         android:textSize="18sp"
-        android:text="@string/ejemploTXT"
+        android:text="ejemplo"
     />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,7 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".Activities.Fourth_Ejercicio"></activity>
+        <activity android:name=".Act_drawer.About_Us"
+            android:label="Info del desarrollador"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".Act_drawer.Recomendaciones"
+            android:label="Recomendaciones de calentamiento"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".Activities.Fourth_Ejercicio" />
         <activity
             android:name=".Activities.Third_nivelCon"
             android:label="nivel Sin Aparato"
@@ -33,6 +39,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
